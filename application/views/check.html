@@ -1,0 +1,14 @@
+<input type="checkbox" id="Checkbox1" name = "chk" value = "1" />
+<input type="checkbox" id="Checkbox2" name = "chk" value = "2" />
+<input type="checkbox" id="Checkbox3" name = "chk" value = "3" />
+<input type="checkbox" id="Checkbox4" name = "chk" value = "4" />
+<input type="button" id="demo" value = "" />
+ 
+<script type = "text/javascript" src = "http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+<script type="text/javascript">
+    $("input:checkbox[name=chk]").live("click", function () {
+        $("input:checkbox[name=chk]:checked").each(function () {
+            alert("Id: " + $(this).attr("id") + " Value: " + $(this).val());
+        });
+    });
+</script>
