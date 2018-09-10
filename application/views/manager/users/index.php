@@ -36,7 +36,7 @@
                   <td><?php echo $user->email;?></td>
                   <td><?php echo $user->mobile;?></td>
                   <td><?php if($user->status==0){ ?><a href="" class="btn btn-danger">Deactive</a><?php } else { ?><a href="" class="btn btn-success">Active</a><?php }?></td>
-                  <td><a class="btn btn-primary" href="<?php echo  base_url('admin/users/view/').$user->id;?>"><i class="fa fa-eye"></i></a>&nbsp;<a class="btn btn-danger" href="<?php echo  base_url('admin/users/delete/').$user->id;?>"><i class="fa fa-trash"></i></a></td>
+                  <td><a class="btn btn-primary" href="<?php echo  base_url('manager/users/view/').$user->id;?>"><i class="fa fa-eye"></i></a>&nbsp;<a class="btn btn-danger" href="<?php echo  base_url('manager/users/delete/').$user->id;?>"><i class="fa fa-trash"></i></a></td>
                 </tr>
               <?php }?>
                  </table>

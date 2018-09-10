@@ -73,6 +73,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>admins/dist/js/demo.js"></script>
 
+ <script src="<?php echo base_url();?>admins/build/jquery.datetimepicker.full.js"></script>
 
 <script>
   $(document).ready();
@@ -93,6 +94,18 @@
             return true;
         });
     });
+
 </script>
+
+        <script>
+            /*jslint browser:true*/
+            /*global jQuery, document*/
+
+            jQuery(document).ready(function () {
+                'use strict';
+
+                jQuery('#filter-date, #search-from-date, #search-to-date').datetimepicker();
+            });
+        </script>
 </body>
 </html>

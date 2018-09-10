@@ -13,9 +13,8 @@
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Create Table Details</h3><br>
-             
-              <a class="btn btn-primary pull-right" href="<?php echo  base_url('manager/service/add')?>">Add Table</a>
+              <h3 class="box-title"> Waiter Details</h3><br>
+              <a class="btn btn-primary pull-right" href="<?php echo  base_url('manager/waiter/addWaiter')?>">Add New</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -23,20 +22,19 @@
                 <thead>
                 <tr>
                   <th>Sr No.</th>
-                  <th>Table Name</th>
-                  <th>Table ID</th>
-                  <th>Table Seat</th>
+                  <th>Waiter No</th>
+                  <th>Waiter Name</th>
                   <th>Action</th>
                 </tr>
                 </thead>
                 <tbody>
-                  <?php $i=1; foreach($brands as $brand){?>
+                  <?php $i=1; foreach($listing as $categories){?>
                 <tr>
                   <td><?php echo $i++;?></td>
-                  <td><?php echo $brand->Service_Name;?></td>
-                  <td><?php echo $brand->Service_ID;?></td>
-                  <td><?php echo $brand->total_seat;?></td>
-                  <td><a class="btn btn-primary" href="<?php echo  base_url('manager/service/edit/').$brand->SN;?>"><i class="fa fa-eye"></i></a>&nbsp;<a class="btn btn-danger" href="<?php echo  base_url('manager/service/delete/').$brand->SN;?>"><i class="fa fa-trash"></i></a></td>
+                  <td><?php echo $categories->waiter_id;?></td>
+                  <td><?php echo $categories->waiter_name;?></td>
+                  <td><a class="btn btn-primary" href="<?php echo  base_url('manager/waiter/edit/').$categories->id;?>"><i class="fa fa-eye"></i></a>&nbsp;
+                    <a class="btn btn-danger" href="<?php echo  base_url('manager/waiter/delete/').$categories->id;?>"><i class="fa fa-trash"></i></a></td>
                 </tr>
               <?php }?>
                  </table>

@@ -14,7 +14,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"> Category Details</h3><br>
-              <a class="btn btn-primary pull-right" href="<?php echo  base_url('admin/category/add_cat')?>">Add New</a>
+              <a class="btn btn-primary pull-right" href="<?php echo  base_url('manager/category/add_cat')?>">Add New</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -33,8 +33,8 @@
                   <td><?php echo $i++;?></td>
                   <td><?php echo $categories->Category_Name;?></td>
                   <td><?php echo $categories->Category_ID;?></td>
-                  <td><a class="btn btn-primary" href="<?php echo  base_url('admin/category/edit_cat/').$categories->cat_id;?>"><i class="fa fa-eye"></i></a>&nbsp;
-                    <a class="btn btn-danger" href="<?php echo  base_url('admin/category/cat_delete/').$categories->cat_id;?>"><i class="fa fa-trash"></i></a></td>
+                  <td><a class="btn btn-primary" href="<?php echo  base_url('manager/category/edit_cat/').$categories->cat_id;?>"><i class="fa fa-eye"></i></a>&nbsp;
+                    <a class="btn btn-danger" href="<?php echo  base_url('manager/category/cat_delete/').$categories->cat_id;?>"><i class="fa fa-trash"></i></a></td>
                 </tr>
               <?php }?>
                  </table>

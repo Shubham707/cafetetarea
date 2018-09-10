@@ -34,6 +34,8 @@ class Brand extends CI_Controller
 			'Brand_Name'=>$this->input->post('Brand_Name'),
 			'Brand_menu'=>$this->input->post('Brand_menu'),
 			'Brand_price'=>$this->input->post('Brand_price'),
+			'discount_price'=>$this->input->post('discount_price'),
+			'total_price'=>$this->input->post('total_price'),
 		);
 		$this->db->insert('brand_table',$data);
 		$this->session->set_flashdata('message','Brand Added Successfull.');
@@ -46,6 +48,8 @@ class Brand extends CI_Controller
 			'Brand_Name'=>$this->input->post('Brand_Name'),
 			'Brand_menu'=>$this->input->post('Brand_menu'),
 			'Brand_price'=>$this->input->post('Brand_price'),
+			'discount_price'=>$this->input->post('discount_price'),
+			'total_price'=>$this->input->post('total_price'),
 		);
 		$this->db->where('SN',$id);
 		$this->db->update('brand_table',$data);

@@ -20,7 +20,6 @@
                 <label>Menu Category.</label>
                 <div class="input-group">
                   <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
                   </div>
                   <select  class="form-control" name="Brand_menu" >
                     <option>Please Select Category</option>
@@ -36,7 +35,6 @@
                 <label>Menu Name.</label>
                 <div class="input-group">
                   <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
                   </div>
                   <input type="text" class="form-control" name="Brand_Name">
                 </div>
@@ -45,9 +43,25 @@
                 <label>Menu Price.</label>
                 <div class="input-group">
                   <div class="input-group-addon">
-                    <i class="fa fa-calendar"></i>
                   </div>
-                  <input type="text" class="form-control" name="Brand_price">
+                  <input type="text" class="form-control" name="Brand_price" id="Brand_price">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Discount Price.</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                  </div>
+                  <input type="text" class="form-control" name="discount_price"  id="discount_price">
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Price.</label>
+                <div class="input-group">
+                  <div class="input-group-addon">
+                   
+                  </div>
+                  <input type="text" class="form-control" name="total_price" id="total_price">
                 </div>
               </div>
                <div class="form-group">
@@ -69,3 +83,17 @@
   <!-- /.content-wrapper -->
  
 <?php $this->load->view('include/admin_footer');?>
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+      $(document).on("change keyup blur", "#discount_price", function() {
+        var amd = $('#Brand_price').val();
+        var disc = $('#discount_price').val();
+        if (disc != '' && amd != '') {
+          var total=parseInt(amd)/100 * parseInt(disc);
+          $('#total_price').val(parseInt(amd-total));
+        }else{
+          $('#total_price').val(parseInt(amd-total));
+        }
+      });
+    });
+</script>

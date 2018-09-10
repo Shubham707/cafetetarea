@@ -28,7 +28,7 @@
         <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
-            <span>Users</span>
+            <span>Customer</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -36,6 +36,18 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('manager/users');?>"><i class="fa fa-circle-o"></i> Listing</a></li>
             
+          </ul>
+        </li>
+         <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Order List</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('manager/order');?>"><i class="fa fa-circle-o"></i> Order Listing</a></li>
           </ul>
         </li>
          <li class="treeview">
@@ -63,6 +75,7 @@
           <ul class="treeview-menu">
            
             <li><a href="<?php echo base_url('manager/service');?>"><i class="fa fa-circle-o"></i> Table List</a></li>
+            <li><a href="<?php echo base_url('manager/restaurant');?>"><i class="fa fa-circle-o"></i> Restaurant List</a></li>
           </ul>
         </li> 
         <li class="treeview">
@@ -75,6 +88,19 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('manager/payment');?>"><i class="fa fa-circle-o"></i> Payment Listing</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Waiter</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('manager/waiter');?>"><i class="fa fa-circle-o"></i> Listing</a></li>
+            
           </ul>
         </li>
         
@@ -124,6 +150,7 @@
             
           </ul>
         </li>
+       
          <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
