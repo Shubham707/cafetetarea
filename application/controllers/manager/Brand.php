@@ -8,6 +8,7 @@ class Brand extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('User_model');
+		$this->load->model('Brand_model');
 		$this->load->database();
 		$this->load->library('session');
 		if(!$this->session->userdata('manager_in')==true)
@@ -18,14 +19,13 @@ class Brand extends CI_Controller
 	
 	public function index()
 	{		
-		$data['brands']=$this->db->get('brand_table')->result();
+		$data['brands']=$this->Brand_model->listing();
 		$this->load->view('manager/brand/index',$data);
 	}
 	public function edit($id)
 	{
-		$data['menu']=$this->db->get('category_table')->result();
-		$this->db->where('SN',$id);
-		$data['brand']=$this->db->get('brand_table')->result();
+		$data['menu']=$this->db->get('category_table')->listing();
+		$data['brand']=$this->Brand_model->edit($id);
 		$this->load->view('manager/brand/edit',$data);
 	}
 	public function save()
@@ -37,7 +37,7 @@ class Brand extends CI_Controller
 			'discount_price'=>$this->input->post('discount_price'),
 			'total_price'=>$this->input->post('total_price'),
 		);
-		$this->db->insert('brand_table',$data);
+		$this->Brand_model->savedata($data);
 		$this->session->set_flashdata('message','Brand Added Successfull.');
 		redirect(base_url('manager/brand'));
 	}
@@ -51,8 +51,7 @@ class Brand extends CI_Controller
 			'discount_price'=>$this->input->post('discount_price'),
 			'total_price'=>$this->input->post('total_price'),
 		);
-		$this->db->where('SN',$id);
-		$this->db->update('brand_table',$data);
+		$this->Brand_model->update($id,$data);
 		$this->session->set_flashdata('message','Brand Added Successfull.');
 		redirect(base_url('manager/brand'));
 	}

@@ -14,7 +14,7 @@
           <div class="box">
             <div class="box-header">
               <h3 class="box-title"> Order Details</h3><br>
-              <a class="btn btn-primary pull-right" href="<?php echo  base_url('manager/waiter/addWaiter')?>">Add New</a>
+              <a class="btn btn-primary pull-right" href="<?php echo  base_url('manager/order/add')?>">Add New</a>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
@@ -22,10 +22,12 @@
                 <thead>
                 <tr>
                   <th>Order No.</th>
-                  <th>User Name</th>
-                  <th>Table Order</th>
-                  <th>Menu List</th>  
-                  <th>Menu Price</th>
+                  <th>Order Table</th>
+                  <th>Menu List</th>
+                  <th>Quantity</th>
+                  <th>Menu Price</th>  
+                  <th>Discount Price</th>
+                  <th>Total Price</th>
                   <th>Action</th> 
                 </tr>
                 </thead>
@@ -33,12 +35,14 @@
                   <?php $i=1; foreach($order as $categories){?>
                 <tr>
                   <td><?php echo $i++;?></td>
-                  <td><?php echo $categories->user_name;?></td>
                   <td><?php echo $categories->order_table;?></td>
+                  <td><?php echo $categories->order_menu;?></td>
+                  <td><?php echo $categories->order_quantity;?></td>
                   <td><?php echo $categories->menu_price;?></td>
+                  <td><?php echo $categories->dis_price;?></td>
                   <td><?php echo $categories->total_price;?></td>
-                  <td><a class="btn btn-primary" href="<?php echo  base_url('manager/waiter/edit/').$categories->order_id;?>"><i class="fa fa-eye"></i></a>&nbsp;
-                    <a class="btn btn-danger" href="<?php echo  base_url('manager/waiter/delete/').$categories->order_id;?>"><i class="fa fa-trash"></i></a></td>
+                  <td><a class="btn btn-primary" href="<?php echo  base_url('manager/order/orderDetails/').$categories->order_id;?>"><i class="fa fa-eye"></i></a>&nbsp;
+                    <a class="btn btn-danger" href="<?php echo  base_url('manager/order/delete/').$categories->order_id;?>"><i class="fa fa-trash"></i></a></td>
                 </tr>
               <?php }?>
                  </table>

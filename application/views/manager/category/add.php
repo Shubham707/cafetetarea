@@ -14,7 +14,7 @@
             <div class="box-header">
               <h3 class="box-title">Menu Category  Add</h3>
             </div>
-            <form name="frm" action="<?php echo base_url('admin/category/cat_save');?>" method="post">
+            <form name="frm" action="<?php echo base_url('manager/category/cat_save');?>" method="post">
             <div class="box-body">
               <div class="form-group">
                 <label>Menu ID.</label>

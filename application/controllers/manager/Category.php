@@ -8,6 +8,7 @@ class Category extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('User_model');
+		$this->load->model('Category_model');
 		$this->load->database();
 		$this->load->library('session');
 		if(!$this->session->userdata('manager_in')==true)
@@ -18,7 +19,7 @@ class Category extends CI_Controller
 	
 	public function index()
 	{		
-		$data['category']=$this->db->get('category_table')->result();
+		$data['category']=$this->Category_model->listing();
 		$this->load->view('manager/category/index',$data);
 	}
 	public function cat_delete($id)
@@ -30,8 +31,7 @@ class Category extends CI_Controller
 	}
 	public function edit_cat($id)
 	{
-		$this->db->where('cat_id',$id);
-		$data['category']=$this->db->get('category_table')->result();
+		$data['category']=$this->Category_model->edit($id);
 		$this->load->view('manager/category/edit',$data);
 	}
 	public function add_cat()
@@ -45,8 +45,7 @@ class Category extends CI_Controller
 			'Category_ID'=>$this->input->post('Category_ID'),
 			'Category_Name'=>$this->input->post('Category_Name'),
 		);
-		$this->db->where('cat_id',$id);
-		$this->db->update('category_table',$data);
+		$this->Category_model->update($id,$data);
 		$this->session->set_flashdata('message','Category Updated Successfull.');
 		redirect(base_url('manager/category'));
 	}
@@ -56,15 +55,9 @@ class Category extends CI_Controller
 			'Category_ID'=>$this->input->post('Category_ID'),
 			'Category_Name'=>$this->input->post('Category_Name'),
 		);
-		$this->db->insert('category_table',$data);
+		$this->Category_model->savedata($data);
 		$this->session->set_flashdata('message','Category Updated Successfull.');
 		redirect(base_url('manager/category'));
 	}
-
-
-
-
-
-
 
 }

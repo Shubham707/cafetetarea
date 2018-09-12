@@ -68,8 +68,8 @@
 <script src="<?php echo base_url();?>admins/plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
 <script src="<?php echo base_url();?>admins/dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="<?php echo base_url();?>admins/dist/js/pages/dashboard.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) --><!-- 
+<script src="<?php echo base_url();?>admins/dist/js/pages/dashboard.js"></script> -->
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>admins/dist/js/demo.js"></script>
 

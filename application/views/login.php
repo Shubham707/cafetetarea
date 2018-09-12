@@ -17,7 +17,12 @@
                      </div>
                      <div class="header-page">
                         <h1>Sign In to your account </h1>
-                     </div>
+                        <?php if($this->session->flashdata('message')){?>
+                        <div class="alert alert-success">
+                                  <strong>Success!</strong> <?php echo $this->session->flashdata('message');?>
+                                </div>
+                    <?php }?>
+                    </div>
                   </div>
                </div>
             </div>
@@ -40,12 +45,12 @@
                         <form  action="<?php echo base_url('user-login')?>" method="post">
                         
                           <a href="<?php echo base_url('facebook/web_login');?>" class="btn btn-lg btn-block btn-social btn-facebook">
-            					<span class="fa fa-facebook"></span> Sign in with Facebook
-          				  </a>
+                           <span class="fa fa-facebook"></span> Sign in with Facebook
+                       </a>
                           
                           <a  href="<?php echo base_url('User_Authentication');?>"class="btn btn-lg btn-block btn-social btn-google">
-            					<span class="fa fa-google"></span> GoogleLogin
-          				  </a>
+                           <span class="fa fa-google"></span> GoogleLogin
+                       </a>
                           
                           <h2 class="no-span"><b>(OR)</b></h2>
                        
@@ -85,3 +90,4 @@
          <!-- =-=-=-=-=-=-= Ads Archives End =-=-=-=-=-=-= -->
                <!-- =-=-=-=-=-=-= Main Header =-=-=-=-=-=-= -->
       <?php $this->load->view('include/footer.php');?>
+      <script>$('.alert').hide(40000);</script>

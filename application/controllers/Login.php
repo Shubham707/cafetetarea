@@ -22,13 +22,14 @@ class Login extends CI_Controller
 	public function save()
 	{
 		$data = array(
-			'name' => $this->input->post('name'), 
+			'first_name' => $this->input->post('name'), 
 			'email' => $this->input->post('email'),
 			'mobile' => $this->input->post('mobile'),
 			'password' => md5($this->input->post('password')),
 		);
 		//print_r($data); die();
 		$this->User_model->customer_form_insert($data);
+		$this->session->set_flashdata('message', 'New User Registration Successfull');
 		redirect(base_url().'login');
 	}
 	public function user_login()
