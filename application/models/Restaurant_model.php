@@ -34,7 +34,7 @@ class Restaurant_model extends CI_Model
     public function booking_seat($id,$name)
     {           
         $this->db->where('res_id',$id);
-        $data=$this->db->update('restaurant',$name);
+        return $data=$this->db->update('restaurant',$name);
            
     }
 }

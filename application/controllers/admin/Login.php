@@ -53,7 +53,7 @@ class Login extends CI_Controller
 					$this->session->set_userdata($data1);
 					redirect(base_url().'managers');				
 			}
-		}else if($role=='kitchen'){
+		} else if($role=='kitchen'){
 			$checking = $this->Admin_model->login_user($admin_name,$password);
 			if($checking) 
 			{
@@ -64,10 +64,9 @@ class Login extends CI_Controller
 	                'kitchen_in'=>true,
 	               );
 					$this->session->set_userdata($data1);
-					redirect(base_url().'kitchen');				
+					redirect(base_url().'kitchen/dashboard');				
 			}
-
-		}else{
+		} else {
 
 			redirect(base_url().'admin/login');
 	

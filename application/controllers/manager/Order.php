@@ -35,17 +35,13 @@ class Order extends CI_Controller
 	}
 	public function orderRecords()
 	{
-		/*echo '<pre>';
-		print_r($_REQUEST); 
-		echo '</pre>';*/
-		$table=1;
+		
+		$tot_qua=implode(',',$this->input->post('tot_qua'));
+		$table=$this->input->post('table');
 		$prices=implode(',',$this->input->post('price'));
-		echo $menu=implode(',',$this->input->post('menu'));
-		
+		$menu=implode(',',$this->input->post('menu'));
 		$disprice=implode(',',$this->input->post('disprice'));
-		
 		$quantity=implode(',',$this->input->post('quantity'));
-
 		$a= $this->input->post('disprice');
 		$b= $this->input->post('quantity');
 		$total = array();
@@ -53,7 +49,7 @@ class Order extends CI_Controller
 		    $total[$key] = $price * $b[$key];
 		}
 		$total=array_sum($total);
-		$this->Order_model->orderdetails($table,$prices,$menu,$disprice,$quantity,$total);
+		$this->Order_model->orderdetails($table,$prices,$menu,$disprice,$quantity,$total,$tot_qua);
 		redirect(base_url().'manager/order','refresh');
 	}
 	public function delete($id)

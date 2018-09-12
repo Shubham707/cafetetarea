@@ -196,3 +196,114 @@
     <!-- /.sidebar -->
   </aside>
   <?php }?>
+   <?php if($this->session->userdata('kitchen_in')==true){?>
+ <!-- Left side column. contains the logo and sidebar -->
+  <aside class="main-sidebar">
+    <!-- sidebar: style can be found in sidebar.less -->
+    <section class="sidebar">
+      <!-- Sidebar user panel -->
+      <div class="user-panel">
+        <div class="pull-left image">
+          <img src="<?php echo base_url();?>admins/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+        </div>
+        <div class="pull-left info">
+          <p><?php echo $this->session->userdata('username');?></p>
+          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        </div>
+      </div>
+      <!-- sidebar menu: : style can be found in sidebar.less -->
+      <ul class="sidebar-menu">
+        
+        <li class=" treeview">
+          <a href="<?php echo base_url('kitchen/dashboard')?>">
+            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Stock</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('kitchen/stockitem/stock');?>"><i class="fa fa-circle-o"></i>Stock Listing</a></li>
+             <li><a href="<?php echo base_url('kitchen/stockitem');?>"><i class="fa fa-circle-o"></i>Stock Category</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Order</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('kitchen/orderitem');?>"><i class="fa fa-circle-o"></i>Stock Listing</a></li>
+            
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Finish Item</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('kitchen/finishitem');?>"><i class="fa fa-circle-o"></i>Finish Listing</a></li>
+            
+          </ul>
+        </li>
+       
+         <!-- <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Menu</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('kitchen/brand');?>"><i class="fa fa-circle-o"></i> Menu Listing</a></li>
+            <li><a href="<?php echo base_url('kitchen/category');?>"><i class="fa fa-circle-o"></i> Menu Category Listing</a></li>
+          </ul>
+        </li>  -->
+        <!-- <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Service Table</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu"> -->
+            <!-- <li><a href="<?php echo base_url('kitchen/price');?>"><i class="fa fa-circle-o"></i> Price List</a></li> -->
+            <!-- <li><a href="<?php echo base_url('kitchen/service');?>"><i class="fa fa-circle-o"></i> Table List</a></li>
+          </ul>
+        </li>  -->
+        <!-- <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Payment</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('kitchen/payment');?>"><i class="fa fa-circle-o"></i> Payment Listing</a></li>
+          </ul>
+        </li> -->
+        
+        </ul>
+    </section>
+    <!-- /.sidebar -->
+  </aside>
+  <?php }?>
