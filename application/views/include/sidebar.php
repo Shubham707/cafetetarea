@@ -38,6 +38,23 @@
             
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Product</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('manager/product_cat');?>"><i class="fa fa-circle-o"></i> Product Category</a></li>
+            <li><a href="<?php echo base_url('manager/product_cat/product_sub_cat');?>"><i class="fa fa-circle-o"></i> Product Sub Category</a></li>
+          <li><a href="<?php echo base_url('manager/product');?>"><i class="fa fa-circle-o"></i> Product List</a></li>
+          
+
+            
+          </ul>
+        </li>
          <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
@@ -88,6 +105,18 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo base_url('manager/payment');?>"><i class="fa fa-circle-o"></i> Payment Listing</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-laptop"></i>
+            <span>Popular Brand</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="<?php echo base_url('manager/popular');?>"><i class="fa fa-circle-o"></i> Popular Listing</a></li>
           </ul>
         </li>
         <li class="treeview">

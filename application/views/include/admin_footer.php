@@ -102,10 +102,22 @@
             /*global jQuery, document*/
 
             jQuery(document).ready(function () {
-                'use strict';
-
                 jQuery('#filter-date, #search-from-date, #search-to-date').datetimepicker();
             });
         </script>
+        <script type="text/javascript">
+        $(document).ready(function() {
+            $('#category').on("input", function() {
+              var dInput = this.value;
+              $('#slug').val(dInput.toLowerCase().replace(/ /g,'-'));
+              $('#tag').val(dInput.toLowerCase());
+            });
+        });
+        $('.alert').hide(10000);
+        $(function() {
+          $('#datetimepicker1').datetimepicker();
+        });
+
+</script>
 </body>
 </html>

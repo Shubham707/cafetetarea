@@ -12,6 +12,6 @@ class Name extends ExtendsName
     }
     public function listing()
     {
-    	return $this->db->get()->result();	
+    	return $this->db->get('')->result();	
     }
 }
